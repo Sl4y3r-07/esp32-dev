@@ -1,0 +1,2 @@
+source /home/pragyan/esp/wifi_gpio_server/build/bootloader/gdbinit/symbols
+source /home/pragyan/esp/wifi_gpio_server/build/bootloader/gdbinit/connect
