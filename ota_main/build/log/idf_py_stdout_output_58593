@@ -1,0 +1,191 @@
+Command: /home/sl4y3r/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/sl4y3r/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/sl4y3r/esp/esp-idf/ota_main/build/ota_main.elf /home/sl4y3r/esp/esp-idf/ota_main/build/bootloader/bootloader.elf -m '/home/sl4y3r/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/sl4y3r/esp/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 12 2025 12:18:13[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (71) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (77) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (84) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (90) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (100) boot: Defaulting to factory image[0m
+[0;32mI (104) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1fa58h (129624) map[0m
+[0;32mI (156) esp_image: segment 1: paddr=0002fa80 vaddr=3ffb0000 size=00598h (  1432) load[0m
+[0;32mI (156) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=a2410h (664592) map[0m
+[0;32mI (387) esp_image: segment 3: paddr=000d2438 vaddr=3ffb0598 size=03984h ( 14724) load[0m
+[0;32mI (392) esp_image: segment 4: paddr=000d5dc4 vaddr=40080000 size=17e60h ( 97888) load[0m
+[0;32mI (431) esp_image: segment 5: paddr=000edc2c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (442) boot: Disabling RNG early entropy source...[0m
+[0;32mI (453) cpu_start: Multicore app[0m
+[0;32mI (461) cpu_start: Pro cpu start user code[0m
+[0;32mI (461) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (462) app_init: Application information:[0m
+[0;32mI (462) app_init: Project name:     ota_main[0m
+[0;32mI (466) app_init: App version:      v5.5.1[0m
+[0;32mI (469) app_init: Compile time:     Nov 12 2025 12:18:03[0m
+[0;32mI (474) app_init: ELF file SHA256:  433048d6f...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (483) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (486) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (490) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (494) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (501) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (506) heap_init: At 3FFB85E8 len 00027A18 (158 KiB): DRAM[0m
+[0;32mI (511) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (522) heap_init: At 40097E60 len 000081A0 (32 KiB): IRAM[0m
+[0;32mI (529) spi_flash: detected chip: generic[0m
+[0;32mI (531) spi_flash: flash io: dio[0m
+[0;32mI (535) main_task: Started on CPU0[0m
+[0;32mI (545) main_task: Calling app_main()[0m
+[0;32mI (575) wifi:wifi driver task: 3ffc03d4, prio:23, stack:6656, core=0[0m
+[0;32mI (575) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (575) wifi:wifi certification version: v7.0[0m
+[0;32mI (575) wifi:config NVS flash: enabled[0m
+[0;32mI (575) wifi:config nano formatting: disabled[0m
+[0;32mI (585) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (585) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (595) wifi:Init management short buffer num: 32[0m
+[0;32mI (595) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (595) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (605) wifi:Init static rx buffer num: 10[0m
+[0;32mI (605) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (615) wifi_init: rx ba win: 6[0m
+[0;32mI (615) wifi_init: accept mbox: 6[0m
+[0;32mI (615) wifi_init: tcpip mbox: 32[0m
+[0;32mI (615) wifi_init: udp mbox: 6[0m
+[0;32mI (625) wifi_init: tcp mbox: 6[0m
+[0;32mI (625) wifi_init: tcp tx win: 5760[0m
+[0;32mI (625) wifi_init: tcp rx win: 5760[0m
+[0;32mI (635) wifi_init: tcp mss: 1440[0m
+[0;32mI (635) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (635) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (675) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;33mW (675) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (735) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (745) wifi:mode : sta (80:f3:da:53:6c:30)[0m
+[0;32mI (755) wifi:enable tsf[0m
+[0;32mI (755) OTA_BLINK: Connecting to Wi-Fi...[0m
+[0;32mI (1025) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1025) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1035) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1085) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1125) wifi:connected with sl4y3r07, aid = 7, channel 1, BW20, bssid = 62:5c:64:63:4c:82[0m
+[0;32mI (1125) wifi:security: WPA2-PSK, phy: bgn, rssi: -22[0m
+[0;32mI (1135) wifi:pm start, type: 1[0m
+
+[0;32mI (1135) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1165) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1165) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1185) wifi:<ba-add>idx:0 (ifx:0, 62:5c:64:63:4c:82), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2195) esp_netif_handlers: sta ip: 10.114.233.60, mask: 255.255.255.0, gw: 10.114.233.250[0m
+[0;32mI (2195) OTA_BLINK: Connected to Wi-Fi![0m
+[0;32mI (10755) OTA_BLINK: Starting OTA from: http://10.114.233.88:8000/ota_blink.bin[0m
+[0;32mI (10755) main_task: Returned from app_main()[0m
+[0;32mI (10785) OTA_BLINK: esp_http_client_open() returned: ESP_OK[0m
+[0;32mI (10785) OTA_BLINK: Performing OTA...[0m
+[0;33mW (10785) esp_https_ota: Continuing with insecure option because CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP is set.[0m
+[0;32mI (10825) esp_https_ota: Starting OTA...[0m
+[0;32mI (10825) esp_https_ota: Writing to <ota_0> partition at offset 0x110000[0m
+[0;32mI (12345) esp_image: segment 0: paddr=00110020 vaddr=3f400020 size=0a52ch ( 42284) map[0m
+[0;32mI (12355) esp_image: segment 1: paddr=0011a554 vaddr=3ffb0000 size=024f0h (  9456) [0m
+[0;32mI (12365) esp_image: segment 2: paddr=0011ca4c vaddr=40080000 size=035cch ( 13772) [0m
+[0;32mI (12365) esp_image: segment 3: paddr=00120020 vaddr=400d0020 size=169a8h ( 92584) map[0m
+[0;32mI (12395) esp_image: segment 4: paddr=001369d0 vaddr=400835cc size=0a298h ( 41624) [0m
+[0;32mI (12415) esp_image: segment 5: paddr=00140c70 vaddr=50000000 size=00020h (    32) [0m
+[0;32mI (12425) esp_image: segment 0: paddr=00110020 vaddr=3f400020 size=0a52ch ( 42284) map[0m
+[0;32mI (12435) esp_image: segment 1: paddr=0011a554 vaddr=3ffb0000 size=024f0h (  9456) [0m
+[0;32mI (12445) esp_image: segment 2: paddr=0011ca4c vaddr=40080000 size=035cch ( 13772) [0m
+[0;32mI (12445) esp_image: segment 3: paddr=00120020 vaddr=400d0020 size=169a8h ( 92584) map[0m
+[0;32mI (12485) esp_image: segment 4: paddr=001369d0 vaddr=400835cc size=0a298h ( 41624) [0m
+[0;32mI (12495) esp_image: segment 5: paddr=00140c70 vaddr=50000000 size=00020h (    32) [0m
+[0;32mI (12515) OTA_BLINK: OTA Successful! Rebooting...[0m
+[0;32mI (12515) wifi:state: run -> init (0x0)[0m
+[0;32mI (12525) wifi:pm stop, total sleep time: 8427423 us / 11381781 us[0m
+
+[0;32mI (12525) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (12525) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12535) OTA_BLINK: Retrying connection...[0m
+[0;32mI (12575) wifi:flush txq[0m
+[0;32mI (12575) wifi:stop sw txq[0m
+[0;32mI (12575) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 12 2025 12:18:13[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (71) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (77) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (84) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (90) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (100) esp_image: segment 0: paddr=00110020 vaddr=3f400020 size=0a52ch ( 42284) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0011a554 vaddr=3ffb0000 size=024f0h (  9456) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0011ca4c vaddr=40080000 size=035cch ( 13772) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00120020 vaddr=400d0020 size=169a8h ( 92584) map[0m
+[0;32mI (165) esp_image: segment 4: paddr=001369d0 vaddr=400835cc size=0a298h ( 41624) load[0m
+[0;32mI (182) esp_image: segment 5: paddr=00140c70 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (188) boot: Loaded app from partition at offset 0x110000[0m
+[0;32mI (189) boot: Disabling RNG early entropy source...[0m
+[0;32mI (200) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: Pro cpu start user code[0m
+[0;32mI (208) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (208) app_init: Project name:     ota_blink[0m
+[0;32mI (212) app_init: App version:      v5.5.1[0m
+[0;32mI (216) app_init: Compile time:     Nov 12 2025 11:32:47[0m
+[0;32mI (221) app_init: ELF file SHA256:  b824e23b5...[0m
+[0;32mI (225) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (229) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (233) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (237) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFB2DE0 len 0002D220 (180 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (268) heap_init: At 4008D864 len 0001279C (73 KiB): IRAM[0m
+[0;32mI (275) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;32mI (281) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[0;32mI (311) BLINK2: BLINK2 firmware running on new partition![0m
+[0;32mI (311) main_task: Returned from app_main()[0m

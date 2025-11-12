@@ -1,0 +1,2 @@
+source /home/sl4y3r/esp/esp-idf/ota_blink/build/gdbinit/symbols
+source /home/sl4y3r/esp/esp-idf/ota_blink/build/gdbinit/connect

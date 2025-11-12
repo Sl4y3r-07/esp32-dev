@@ -4,7 +4,6 @@
 #include "FS.h"
 #include "LittleFS.h"
 
-// Adjust these pins/geometry for your board if needed
 #ifdef WIRELESS_STICK_V3
 static SSD1306Wire display(0x3c, 500000, SDA_OLED, SCL_OLED, GEOMETRY_64_32, RST_OLED);
 #else
@@ -30,15 +29,15 @@ void setup() {
 
   // Mount LittleFS
   if (!LittleFS.begin()) {
-    Serial.println("❌ LittleFS Mount Failed!");
+    Serial.println(" LittleFS Mount Failed!");
     display.drawString(0, 0, "LittleFS Mount Failed!");
     display.display();
     return;
   }
-  Serial.println("✅ LittleFS mounted successfully!\n");
+  Serial.println(" LittleFS mounted successfully!\n");
 
-  // Print LittleFS file list
-  Serial.println("📂 Files on LittleFS:");
+
+  Serial.println(" Files on LittleFS:");
   File root = LittleFS.open("/");
   File file = root.openNextFile();
   while (file) {
@@ -46,10 +45,10 @@ void setup() {
     file = root.openNextFile();
   }
 
-  // Read message.txt
+
   File msgFile = LittleFS.open("/message.txt", "r");
   if (!msgFile) {
-    Serial.println("⚠️  /message.txt not found!");
+    Serial.println(" /message.txt not found!");
     display.clear();
     display.drawString(0, 0, "message.txt not found!");
     display.display();
@@ -57,7 +56,7 @@ void setup() {
   }
 
   if (msgFile.size() == 0) {
-    Serial.println("⚠️  message.txt is empty!");
+    Serial.println(" message.txt is empty!");
     display.clear();
     display.drawString(0, 0, "message.txt empty!");
     display.display();
@@ -65,7 +64,7 @@ void setup() {
     return;
   }
 
-  Serial.println("\n✅ Reading /message.txt...");
+  Serial.println("\n Reading /message.txt...");
   display.clear();
 
   // Print raw file content to Serial
@@ -88,14 +87,13 @@ void setup() {
         display.drawString(0, lineNum * 10, line);
         line = "";
         lineNum++;
-        if (lineNum >= 6) break; // OLED fits up to 6 lines
+        if (lineNum >= 6) break; 
       }
     } else {
       line += c;
     }
   }
 
-  // Display any remaining line
   if (line.length() > 0 && lineNum < 6) {
     display.drawString(0, lineNum * 10, line);
   }
@@ -103,13 +101,13 @@ void setup() {
   display.display();
   msgFile.close();
 
-  Serial.println("✅ File read complete!");
-  Serial.println("📺 Displaying content for 10 seconds...");
+  Serial.println("File read complete!");
+  Serial.println(" Displaying content for 10 seconds...");
   delay(10000);
 
   display.clear();
   display.display();
-  Serial.println("🕒 Display cleared after 10 seconds.");
+  Serial.println("Display cleared after 10 seconds.");
 }
 
 void loop() {}

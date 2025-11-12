@@ -10,14 +10,13 @@
 #include "esp_http_server.h"
 #include "driver/gpio.h"
 
-#define LED_GPIO 2  // ✅ GPIO 2 is safe and has onboard LED on many ESP32 boards
-#define WIFI_SSID "Pragyan Galaxy" 
-#define WIFI_PASS "22115118"
+#define LED_GPIO 2 
+#define WIFI_SSID "sl4y307" 
+#define WIFI_PASS "ayush231"
 
 static const char *TAG = "WIFI_GPIO_SERVER";
 static httpd_handle_t server = NULL;
 
-// ==== HTTP HANDLERS ==== //
 
 static esp_err_t root_get_handler(httpd_req_t *req)
 {
@@ -89,7 +88,6 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
         ESP_LOGI(TAG, "Got IP: " IPSTR, IP2STR(&event->ip_info.ip));
 
-        // ✅ Turn GPIO 2 ON after successful Wi-Fi connection
         gpio_set_level(LED_GPIO, 1);
         ESP_LOGI(TAG, "Wi-Fi connected, GPIO %d -> ON", LED_GPIO);
 
@@ -102,7 +100,6 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
     }
 }
 
-// ==== WIFI INITIALIZATION ==== //
 
 void wifi_init_sta(void)
 {
@@ -128,11 +125,10 @@ void wifi_init_sta(void)
     ESP_LOGI(TAG, "Connecting to Wi-Fi SSID:%s", WIFI_SSID);
 }
 
-// ==== MAIN ==== //
 
 void app_main(void)
 {
-    // Initialize NVS
+
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
     {
@@ -141,12 +137,12 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    // Initialize GPIO
+ 
     gpio_reset_pin(LED_GPIO);
     gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
     gpio_set_level(LED_GPIO, 0); // initially OFF
 
-    // Initialize networking and start Wi-Fi
+
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     wifi_init_sta();

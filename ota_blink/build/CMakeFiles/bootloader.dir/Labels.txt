@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/sl4y3r/esp/esp-idf/ota_blink/build/CMakeFiles/bootloader
+/home/sl4y3r/esp/esp-idf/ota_blink/build/CMakeFiles/bootloader.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/CMakeFiles/bootloader-complete.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/sl4y3r/esp/esp-idf/ota_blink/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

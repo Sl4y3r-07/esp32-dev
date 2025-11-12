@@ -47,7 +47,7 @@ void display_rx_status(const char *packet, int16_t rssi_val, int16_t size_val, i
   display.setTextAlignment(TEXT_ALIGN_LEFT);
   display.setFont(ArialMT_Plain_10);
 
-  display.drawString(0, 0, "📶 Packet Received!");
+  display.drawString(0, 0, "Packet Received!");
   display.drawString(0, 12, "RSSI: " + String(rssi_val) + " | SNR: " + String(snr_val));
   display.drawString(0, 24, "Size: " + String(size_val) + " bytes");
 
@@ -127,7 +127,7 @@ void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi_val, int8_t snr_val)
 
   Radio.Sleep();
 
-  Serial.printf("\n📩 Received packet: \"%s\" | RSSI: %d dBm | SNR: %d | Size: %d bytes\n",
+  Serial.printf("\n Received packet: \"%s\" | RSSI: %d dBm | SNR: %d | Size: %d bytes\n",
                 rxpacket, rssi, snr, rxSize);
 
   display_rx_status(rxpacket, rssi, rxSize, snr);

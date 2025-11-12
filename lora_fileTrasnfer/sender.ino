@@ -73,32 +73,32 @@ void setup() {
 
   // --- Mount LittleFS ---
   if (!LittleFS.begin()) {
-    Serial.println("❌ LittleFS Mount Failed!");
+    Serial.println(" LittleFS Mount Failed!");
     display.clear();
     display.drawString(0, 0, "LittleFS Mount Failed!");
     display.display();
     while (true);
   }
-  Serial.println("✅ LittleFS mounted successfully!");
+  Serial.println(" LittleFS mounted successfully!");
 
   // --- Open message.txt ---
   msgFile = LittleFS.open("/message.txt", "r");
   if (!msgFile) {
-    Serial.println("⚠️  /message.txt not found!");
+    Serial.println("  /message.txt not found!");
     display.clear();
     display.drawString(0, 0, "message.txt not found!");
     display.display();
     while (true);
   }
   if (msgFile.size() == 0) {
-    Serial.println("⚠️  message.txt is empty!");
+    Serial.println(" message.txt is empty!");
     display.clear();
     display.drawString(0, 0, "message.txt empty!");
     display.display();
     while (true);
   }
 
-  Serial.printf("✅ Opened /message.txt (%u bytes)\n", msgFile.size());
+  Serial.printf("Opened /message.txt (%u bytes)\n", msgFile.size());
 
   // --- LoRa Setup ---
   RadioEvents.TxDone = OnTxDone;
@@ -154,13 +154,13 @@ void loop() {
 
 // ================== CALLBACKS ==================
 void OnTxDone(void) {
-  Serial.println("✅ TX done");
+  Serial.println("TX done");
   display_tx_status(txpacket, true);
   lora_idle = true;
 }
 
 void OnTxTimeout(void) {
-  Serial.println("⚠️ TX timeout");
+  Serial.println("TX timeout");
   Radio.Sleep();
   display_tx_status(txpacket, false);
   lora_idle = true;
